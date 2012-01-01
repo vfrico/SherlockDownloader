@@ -1,0 +1,9 @@
+cd src/
+javac org.carballude.sherlock.Starter
+
++o-!!
+
+Dependencias:
+gobject-introspection
+gtk
+pygobject
