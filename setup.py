@@ -20,7 +20,7 @@
 #       You should have received a copy of the GNU General Public License
 #       along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-import os
+import os, shutil
 from distutils.core import setup
 
 setup(
@@ -32,7 +32,8 @@ setup(
     description='Programa para llevar la cuenta de mi cartera',
     scripts=["bin/sherlock-downloader"],
     url = "http://www.cambiadeso.es",
-    data_files=[("/usr/share/sherlock-downloader/",["src/sherlock.glade","src/sherlockdownloader.svg","src/sherlock-downloader.desktop"]),
-                ("/usr/share/sherlock-downloader/org/",["src/org/"])],
+    data_files=[("/usr/share/sherlock-downloader/",["src/sherlock.glade","src/sherlockdownloader.svg","src/sherlock-downloader.desktop"])],
     packages=["sherlockdownloader"]
     )
+shutil.rmtree("/usr/share/sherlock-downloader/org/")
+shutil.copytree("src/org/","/usr/share/sherlock-downloader/org/")

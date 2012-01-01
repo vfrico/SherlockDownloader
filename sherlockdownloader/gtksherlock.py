@@ -22,6 +22,7 @@
 #
 from gi.repository import Gtk
 from sherlockdownloader import info
+from sherlockdownloader import interaction
 class Sherlock:
     def __init__(self):
         # Crea la ventana de trabajo Principal y obtiene los objetos en Glade
@@ -45,6 +46,14 @@ class Sherlock:
 
     def descifrar(self,widget):
         print "Descifrando"
+        self.geturl = self.builder.get_object("entryurl")
+        self.seturl = self.builder.get_object("exiturl")
+        url = self.geturl.get_text()
+        descifrado = interaction.interaction().GetUrl(url)
+        if descifrado[0]:
+            self.seturl.set_text(descifrado[1])
+        else:
+            self.seturl.set_text("Ha habido un error")
 
     def download(self,widget):
         print "Descargar"
