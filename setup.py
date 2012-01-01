@@ -32,6 +32,7 @@ setup(
     description='Programa para llevar la cuenta de mi cartera',
     scripts=["bin/sherlock-downloader"],
     url = "http://www.cambiadeso.es",
-    data_files=[("/usr/share/sherlock-downloader/",["src/sherlockdownloader.svg","src/sherlock-downloader.desktop"])],
+    data_files=[("/usr/share/sherlock-downloader/",["src/sherlock.glade","src/sherlockdownloader.svg","src/sherlock-downloader.desktop"]),
+                ("/usr/share/sherlock-downloader/org/",["src/org/"])],
     packages=["sherlockdownloader"]
     )

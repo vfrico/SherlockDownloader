@@ -47,9 +47,7 @@ def main(argv):
             assert False, "Unhandled option"
     if opt == []:
         sherlock = gtksherlock.Sherlock()
-        
-        #~ print "Prueba"
-            
+
             
 def usage():
     usage = """
@@ -60,23 +58,6 @@ def usage():
     """
     print usage
 
-
-
-        
 if __name__ == "__main__":
     main(sys.argv[1:]) # [1:] => Quita el primer argumento ya que es el nombre del programa
     Gtk.main()
-
-#~ import sys
-#~ import subprocess
-#~ 
-#~ def EjecutarComando(comando):
-	#~ proceso = subprocess.Popen(comando, shell=True,stdin=subprocess.PIPE,stdout=subprocess.PIPE)
-	#~ while True:
-		#~ next_line = proceso.stdout.readline()
-		#~ sys.stdout.write(next_line)    
-		#~ sys.stdout.flush()
-		#~ if next_line == '' and proceso.poll() != None:
-			#~ break
-			#~ 
-#~ EjecutarComando("java -jar ../src/SherlockDownloader.jar --no-gui http://www.rtve.es/9864/82784")
