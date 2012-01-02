@@ -30,9 +30,11 @@ setup(
     author='Ví­ctor Fernández Rico',
     author_email='vfrico@gmail.com',
     description='Programa para llevar la cuenta de mi cartera',
-    scripts=["bin/sherlock-downloader"],
+    #~ scripts=["bin/sherlock-downloader"],
     url = "http://www.cambiadeso.es",
-    data_files=[("/usr/share/sherlock-downloader/",["src/sherlock.glade","src/sherlockdownloader.svg","src/sherlock-downloader.desktop"])],
+    data_files=[("/usr/share/sherlock-downloader/",["src/sherlock.glade","src/sherlockdownloader.svg"]),
+                ("/usr/share/applications/",["src/sherlock-downloader.desktop"]),
+                ("/usr/bin/",["bin/sherlock-downloader"])],
     packages=["sherlockdownloader"]
     )
 shutil.rmtree("/usr/share/sherlock-downloader/org/")
