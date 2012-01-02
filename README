@@ -1,0 +1,6 @@
+To install it on linux systems
+
+$ sudo python setup.py install
+$ sherlock-downloader
+
+After run this, you also will be able to load it from apps menu

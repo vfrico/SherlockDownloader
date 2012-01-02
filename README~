@@ -1,0 +1,4 @@
+To install it on linux systems
+
+$ sudo python setup.py install
+$ sherlock-downloader
