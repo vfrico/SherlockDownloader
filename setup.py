@@ -37,5 +37,19 @@ setup(
                 ("/usr/bin/",["bin/sherlock-downloader"])],
     packages=["sherlockdownloader"]
     )
+try:
+    os.mkdir("/usr/share/sherlock-downloader/org")
+except:
+    try:
+        os.mkdir("/usr/share/sherlock-downloader/")
+    except:
+        print "No hay /usr/share"
+#~ try:
 shutil.rmtree("/usr/share/sherlock-downloader/org/")
+#~ except:
+    #~ print "Not rmtree"
+
+#~ try:
 shutil.copytree("src/org/","/usr/share/sherlock-downloader/org/")
+#~ except:
+    #~ print "Not copy tree"

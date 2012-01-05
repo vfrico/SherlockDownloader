@@ -55,6 +55,9 @@ class interaction():
         basename , extension = os.path.splitext(descarga[0])
         print "Extensión: ",extension
         return [descarga[0],extension]
-        
+
+def separarext(self,ruta):
+    base , ext = os.path.splitext(ruta)
+    return ext
         
         

@@ -1,0 +1,20 @@
+Source: sherlock-downloader
+Section: utils
+Priority: extra
+Maintainer: Víctor Fernández Rico <vfrico@gmail.com>
+Build-Depends: debhelper (>= 7.0.50~), python-support, python (>=2.4)
+Standards-Version: 3.9.1
+Homepage: http://www.cambiadeso.es
+
+Package: sherlock-downloader
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends},
+	python-gtk2,
+	default-jre,
+	gir1.2-gtk-3.0,
+	python-glade2
+Description: Download videos from TV channels' webs
+ Sherlock downloader is a GUI interface written in
+ python and GTK+3. Uses for get the URL a program
+ written in Java and allows to download videos from
+ the webs of spanish TV channels. This program is

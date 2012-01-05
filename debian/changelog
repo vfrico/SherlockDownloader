@@ -1,0 +1,5 @@
+sherlock-downloader (0.1-ubuntu1) oneric; urgency=low
+
+  * Initial release as debian package
+
+ -- Víctor Fernández Rico <victor@victor-Inspiron-1545>  Thu, 05 Jan 2012 16:04:26 +0100

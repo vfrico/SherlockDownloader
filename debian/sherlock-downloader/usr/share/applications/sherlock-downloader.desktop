@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Sherlock Downloader
+Icon=/usr/share/sherlock-downloader/sherlockdownloader.svg
+Comment=Download videos from tv webs
+Comment[es]=Descarga vídeos desde las webs de las televisiones
+Exec=/usr/bin/sherlock-downloader
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;Utility;
+StartupNotify=False
+Name[es_ES]=sherlock-downloader
