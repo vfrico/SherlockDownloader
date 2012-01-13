@@ -41,6 +41,8 @@ class Sherlock:
         self.downdest = self.builder.get_object("filechooserbutton2")
         self.lblfinaldown = self.builder.get_object("lblfinaldown")
         self.downloadname = self.builder.get_object("entrydown")
+        self.toggbut = self.builder.get_object("togglebutton1")
+        self.toggbut2 = self.builder.get_object("togglebutton2")
         # As default, hides the boxes which shows URL guesser and downloader
         self.alignement.hide() # Guess URL
         self.alignement12.hide() # Download
@@ -67,8 +69,10 @@ class Sherlock:
     def togglemostrar(self,widget):
         print "toggle"
         # Show the box which contains the text entry and the guessed url
-        self.toggbut = self.builder.get_object("togglebutton1")
         if self.toggbut.get_active():
+	    if self.toggbut2.get_active():
+                self.alignement12.hide()
+                self.toggbut2.set_active(False)
             algo = self.descifrar(None)
             print "descifrar" 
             self.seturl.show()
@@ -93,9 +97,11 @@ class Sherlock:
             
     def toggledownload(self,widget):
         # Shows the box containing download options
-        print "toggle download"
-        self.toggbut2 = self.builder.get_object("togglebutton2")
+        print "toggle download"        
         if self.toggbut2.get_active():
+            if self.toggbut.get_active():
+                self.alignement.hide()
+                self.toggbut.set_active(False)
             print "descifrar" 
             self.alignement12.show()
             # Calls to download function
@@ -155,13 +161,12 @@ class Sherlock:
     def descargarvideo(self,widget):
         nombre = self.newnameentry.get_text()
         destino = self.newdestination.get_filename()
+        self.dialogdownload.run()
+        self.dialogdownload.hide()
         url = interaction.interaction().GetUrl(self.geturl.get_text())
         salida = interaction.interaction().DescargarUrl(url[1],
                                     nombre = nombre, destino = destino)
-    
-        self.lblfinaldown.set_text(salida[0])
-        self.dialogdownload.run()
-        self.dialogdownload.hide()
+        self.lblfinaldown.set_text(salida[0])        
         #~ self.dialogdownload.format_secondary_text("El vídeo está siendo descargado en: "+str(salida[0]))
         
         

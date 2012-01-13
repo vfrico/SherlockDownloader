@@ -101,7 +101,6 @@ class Sherlock:
         if self.toggbut2.get_active():
             if self.toggbut.get_active():
                 self.alignement.hide()
-                self.toggbut.set_active(False)
             print "descifrar" 
             self.alignement12.show()
             # Calls to download function
