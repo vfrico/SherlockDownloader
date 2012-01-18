@@ -101,6 +101,7 @@ class Sherlock:
         if self.toggbut2.get_active():
             if self.toggbut.get_active():
                 self.alignement.hide()
+                self.toggbut.set_active(False)
             print "descifrar" 
             self.alignement12.show()
             # Calls to download function
@@ -160,12 +161,11 @@ class Sherlock:
     def descargarvideo(self,widget):
         nombre = self.newnameentry.get_text()
         destino = self.newdestination.get_filename()
+        url = interaction.interaction().GetUrl(self.geturl.get_text())
+        self.lblfinaldown.set_text(destino)      
         self.dialogdownload.run()
         self.dialogdownload.hide()
-        url = interaction.interaction().GetUrl(self.geturl.get_text())
-        salida = interaction.interaction().DescargarUrl(url[1],
-                                    nombre = nombre, destino = destino)
-        self.lblfinaldown.set_text(salida[0])        
+        salida = interaction.interaction().DescargarUrl(url[1], nombre = nombre, destino = destino)
         #~ self.dialogdownload.format_secondary_text("El vídeo está siendo descargado en: "+str(salida[0]))
         
         

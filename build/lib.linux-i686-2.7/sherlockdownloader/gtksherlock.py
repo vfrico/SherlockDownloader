@@ -39,7 +39,7 @@ class Sherlock:
         self.newdestination = self.builder.get_object("filechooserbutton1")
         self.dialogdownload = self.builder.get_object("dialogdownload")
         self.downdest = self.builder.get_object("filechooserbutton2")
-        self.lblfinaldown = self.builder.get_object("lblfinaldown")
+        self.lblfinaldown = self.builder.get_object("lblfinaldown") #Window message
         self.downloadname = self.builder.get_object("entrydown")
         self.toggbut = self.builder.get_object("togglebutton1")
         self.toggbut2 = self.builder.get_object("togglebutton2")
@@ -161,12 +161,11 @@ class Sherlock:
     def descargarvideo(self,widget):
         nombre = self.newnameentry.get_text()
         destino = self.newdestination.get_filename()
+        url = interaction.interaction().GetUrl(self.geturl.get_text())
+        self.lblfinaldown.set_text(destino)      
         self.dialogdownload.run()
         self.dialogdownload.hide()
-        url = interaction.interaction().GetUrl(self.geturl.get_text())
-        salida = interaction.interaction().DescargarUrl(url[1],
-                                    nombre = nombre, destino = destino)
-        self.lblfinaldown.set_text(salida[0])        
+        salida = interaction.interaction().DescargarUrl(url[1], nombre = nombre, destino = destino)
         #~ self.dialogdownload.format_secondary_text("El vídeo está siendo descargado en: "+str(salida[0]))
         
         
